@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #ccc; */
+  background-image: url("/public/images/wallpaper.jpg");
+  background-repeat: repeat-y;
+  /* transform: scaleX(-1); */
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
