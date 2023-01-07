@@ -1,13 +1,13 @@
-import { Outlet } from "react-router-dom";
 import { useRef, useContext } from "react";
-import Header from "./Header";
-import { WeatherContext } from "../context/WeatherContext";
+import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
+import { WeatherContext } from "../context/WeatherContext";
 import { capitalizeText } from "../helpers";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = () => {
   const { setCity } = useContext(WeatherContext);
-
   const cityInputRef = useRef();
 
   const handleSubmit = (e) => {
@@ -29,9 +29,9 @@ const Layout = () => {
           <input type="text" placeholder="wpisz miasto" ref={cityInputRef} />
           <button type="submit">Szukaj</button>
         </form>
-
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

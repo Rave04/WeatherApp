@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import { FORECAST_API, API_KEY } from "../config";
 import useAxiosFetch from "../hooks/UseAxiosFetch";
-import { ClipLoader } from "react-spinners";
-
 import styles from "./FutureWeather.module.css";
+import { WeatherContext } from "../context/WeatherContext";
+import { ClipLoader } from "react-spinners";
 import FutureWeatherContainer from "./FutureWeatherContainer";
+import { FORECAST_API, API_KEY } from "../config";
+
 const FutureWeather = () => {
   const { city } = useContext(WeatherContext);
   let weatherData = [];
@@ -15,9 +15,7 @@ const FutureWeather = () => {
 
   if (Object.entries(data).length > 0) {
     for (const dailyWeather of data.list) {
-      // console.log(dailyWeather["dt_txt"]);
       if (dailyWeather["dt_txt"].includes("12:00:00")) {
-        // console.log("ma 12");
         const newWeatherData = {
           id: dailyWeather.dt,
           date: dailyWeather["dt_txt"].substring(0, 10),
@@ -33,8 +31,6 @@ const FutureWeather = () => {
     }
   }
 
-  console.log(weatherData);
-
   let errorMessage = "";
   if (fetchError) {
     console.log(fetchError);
@@ -45,7 +41,6 @@ const FutureWeather = () => {
     }
   }
 
-  console.log(fetchError, isLoading, weatherData.length, city);
   return (
     <div>
       {fetchError && <p>{errorMessage}</p>}

@@ -1,0 +1,25 @@
+.footer {
+  position: relative;
+  height: 5vh;
+  min-height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    72deg,
+    rgba(32, 105, 153, 1) 0%,
+    rgba(126, 189, 227, 1) 48%,
+    rgba(74, 168, 205, 1) 87%
+  );
+
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Avenir";
+  font-weight: bold;
+}
+
+.footer p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

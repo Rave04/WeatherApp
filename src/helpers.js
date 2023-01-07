@@ -1,6 +1,7 @@
 export const getWeatherPicture = (description) => {
   const weatherDescription = description.toLowerCase();
-  let imageSrc = `images/${weatherDescription}.png`;
+  let imageSrc = `/weather-app/images/${weatherDescription}.png`;
+  console.log(imageSrc);
   return imageSrc;
 };
 

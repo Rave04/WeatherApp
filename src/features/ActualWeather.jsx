@@ -1,16 +1,14 @@
-import { useContext, useState } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import Card from "../components/UI/Card";
-import styles from "./ActualWeather.module.css";
-import { getWeatherPicture } from "../helpers";
+import { useContext } from "react";
 import useAxiosFetch from "../hooks/UseAxiosFetch";
+import styles from "./ActualWeather.module.css";
+import { WeatherContext } from "../context/WeatherContext";
 import { formatTime } from "../helpers";
 import { ClipLoader } from "react-spinners";
 import WeatherElement from "./WeatherElement";
-
 import { WEATHER_API, API_KEY } from "../config";
+
 const ActualWeather = () => {
-  const { city, setCity } = useContext(WeatherContext);
+  const { city } = useContext(WeatherContext);
   let weatherData = {};
 
   const { data, fetchError, isLoading } = useAxiosFetch(
@@ -32,10 +30,6 @@ const ActualWeather = () => {
     }
   }
 
-  console.log(fetchError);
-
-  // console.log(Object.keys(actualWeatherData).length);
-
   let errorMessage = "";
   if (fetchError) {
     console.log(fetchError);
@@ -53,31 +47,6 @@ const ActualWeather = () => {
       )}
       {!fetchError && !isLoading && Object.keys(weatherData).length !== 0 && (
         <WeatherElement actual weather={weatherData} />
-        // <Card className={styles.weatherContainer}>
-        //   <div className={styles.weatherImage}>
-        //     <img
-        //       src={getWeatherPicture(weatherData.description[0])}
-        //       alt="Słoneczny dzień"
-        //     />
-        //   </div>
-        //   <div className={styles.location}>
-        //     <p>{city}</p>
-        //   </div>
-        //   <div className={styles.description}>
-        //     <p>{weatherData.description[1]}</p>
-        //   </div>
-        //   <div className={styles.weatherInfo}>
-        //     <div className="metric">
-        //       <p>🌡️ {weatherData.temperature}°C</p>
-        //       <p>💨 {weatherData.wind}m/s</p>
-        //     </div>
-
-        //     <div className="sun-info">
-        //       <p>☀️ Wschód słońca: {weatherData.sunrise}</p>
-        //       <p>🌙 Zachód słońca: {weatherData.sunset}</p>
-        //     </div>
-        //   </div>
-        // </Card>
       )}
     </div>
   );

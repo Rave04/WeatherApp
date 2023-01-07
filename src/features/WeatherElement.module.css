@@ -1,12 +1,21 @@
 .weatherElement {
-  width: 40%;
+  width: 45%;
   height: 50vh;
-  max-height: 1200px;
   overflow: hidden;
   max-width: 779px;
   background-color: #eee;
   font-size: 22px;
   margin-bottom: 30px;
+  min-width: 300px;
+  min-height: 400px;
+}
+
+.weatherElement:not(.actual) .weatherInfo .metric {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  text-align: center;
+  justify-content: space-between;
 }
 
 .actual {
@@ -27,13 +36,15 @@
   font-size: 30px;
   text-align: center;
   padding: 5px;
-  background-color: rgb(175, 210, 231);
+  background-color: rgba(32, 105, 153, 1);
+  color: white;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
 
 .description {
   text-align: center;
+  margin-top: 20px;
 }
 
 .weatherInfo {
@@ -42,8 +53,12 @@
   justify-content: space-around;
   align-items: flex-start;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.weatherInfo div p {
+  margin-top: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -52,16 +67,42 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .weatherImage {
+    height: 50%;
+  }
+  .weatherElement {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 850px) {
+  .weatherElement {
+    height: 60vh;
+  }
+}
+
 @media (max-width: 700px) {
   .description,
   .weatherInfo {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 500px) {
+  .weatherElement:not(.actual) {
+    height: 30vh;
+  }
   .description,
   .weatherInfo {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  .actual {
+    width: 100%;
+  }
+
+  .weatherElement:not(.actual) .weatherInfo .metric p {
+    font-size: 20px;
   }
 }

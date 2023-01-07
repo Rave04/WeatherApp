@@ -3,7 +3,7 @@ import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
-    <nav>
+    <nav className={styles.navigation}>
       <ul>
         <li>
           <Link to="/">Dzisiejsza prognoza</Link>

@@ -1,7 +1,6 @@
 import Card from "../components/UI/Card";
 import styles from "./WeatherElement.module.css";
 import { convertDate } from "../helpers";
-
 import { getWeatherPicture } from "../helpers";
 
 const WeatherElement = ({ weather, actual }) => {
@@ -20,15 +19,15 @@ const WeatherElement = ({ weather, actual }) => {
         <p>{weather.description[1]}</p>
       </div>
       <div className={styles.weatherInfo}>
-        <div className="metric">
+        <div className={styles.metric}>
           <p>🌡️ {weather.temperature}°C</p>
           <p>💨 {weather.wind}m/s</p>
         </div>
 
         {weather.sunset && (
           <div className="sun-info">
-            <p>☀️ Wschód słońca: 7:00</p>
-            <p>🌙 Zachód słońca: 21:00</p>
+            <p>☀️ Wschód słońca: {weather.sunrise}</p>
+            <p>🌙 Zachód słońca: {weather.sunset}</p>
           </div>
         )}
       </div>
