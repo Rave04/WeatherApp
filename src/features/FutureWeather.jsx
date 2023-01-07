@@ -33,7 +33,6 @@ const FutureWeather = () => {
 
   let errorMessage = "";
   if (fetchError) {
-    console.log(fetchError);
     if (fetchError.response.status === 404) {
       errorMessage = `Brak informacji dla miejscowości ${city}!`;
     } else {
@@ -43,7 +42,7 @@ const FutureWeather = () => {
 
   return (
     <div>
-      {fetchError && <p>{errorMessage}</p>}
+      {fetchError && <p className="errorMessage">{errorMessage}</p>}
       {isLoading && (
         <ClipLoader className="loader" color="rgba(32,105, 153, 1)" size={50} />
       )}

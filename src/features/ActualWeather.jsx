@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import useAxiosFetch from "../hooks/UseAxiosFetch";
-import styles from "./ActualWeather.module.css";
 import { WeatherContext } from "../context/WeatherContext";
 import { formatTime } from "../helpers";
 import { ClipLoader } from "react-spinners";
@@ -32,7 +31,6 @@ const ActualWeather = () => {
 
   let errorMessage = "";
   if (fetchError) {
-    console.log(fetchError);
     if (fetchError.response.status === 404) {
       errorMessage = `Brak informacji dla miejscowości ${city}!`;
     } else {
@@ -41,7 +39,7 @@ const ActualWeather = () => {
   }
   return (
     <div>
-      {fetchError && <p className={styles.error}>{errorMessage}</p>}
+      {fetchError && <p className="errorMessage">{errorMessage}</p>}
       {isLoading && (
         <ClipLoader className="loader" color="rgba(32,105, 153, 1)" size={50} />
       )}

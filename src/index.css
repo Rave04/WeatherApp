@@ -8,8 +8,6 @@
 }
 
 body {
-  /* background-image: url("/public/images/wallpaper.jpg");
-  background-repeat: repeat-y; */
   background-color: rgb(157, 194, 218);
 }
 
@@ -24,28 +22,8 @@ main {
   transform: translate(-50%, -50%);
 }
 
-footer {
-  position: relative;
-  height: 5vh;
-  min-height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    72deg,
-    rgba(32, 105, 153, 1) 0%,
-    rgba(126, 189, 227, 1) 48%,
-    rgba(74, 168, 205, 1) 87%
-  );
-
-  font-size: 20px;
-  color: white;
+.errorMessage {
+  margin: 30px;
   text-align: center;
-  vertical-align: middle;
-  font-family: "Avenir";
-  font-weight: bold;
-}
-
-footer p {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  font-size: 20px;
 }
