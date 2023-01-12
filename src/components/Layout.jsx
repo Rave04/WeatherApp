@@ -1,10 +1,10 @@
 import { useRef, useContext } from "react";
 import { Outlet } from "react-router-dom";
-import styles from "./Layout.module.css";
 import { WeatherContext } from "../context/WeatherContext";
 import { capitalizeText } from "../helpers";
 import Header from "./Header";
 import Footer from "./Footer";
+import styles from "./Layout.module.css";
 
 const Layout = () => {
   const { setCity } = useContext(WeatherContext);

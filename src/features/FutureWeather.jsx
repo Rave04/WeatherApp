@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import useAxiosFetch from "../hooks/UseAxiosFetch";
-import styles from "./FutureWeather.module.css";
 import { WeatherContext } from "../context/WeatherContext";
 import { ClipLoader } from "react-spinners";
 import FutureWeatherContainer from "./FutureWeatherContainer";
 import { FORECAST_API, API_KEY } from "../config";
+import styles from "./FutureWeather.module.css";
 
 const FutureWeather = () => {
   const { city } = useContext(WeatherContext);

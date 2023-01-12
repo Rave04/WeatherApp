@@ -1,5 +1,5 @@
-import styles from "./FutureWeatherContainer.module.css";
 import WeatherElement from "./WeatherElement";
+import styles from "./FutureWeatherContainer.module.css";
 
 const FutureWeatherContainer = ({ data }) => {
   return (

@@ -52,8 +52,8 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .navigation ul li a {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
